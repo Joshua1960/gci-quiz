@@ -1,0 +1,94 @@
+body {
+  background-color: #181a32;
+  font-family: Tahoma, sans-serif;
+}
+
+/* Main container */
+.main-cont {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  margin-top: 10vh;
+}
+
+.main-cont h1 {
+  font-size: 40px;
+}
+
+/* Form container */
+.form-cont {
+  background-color: #ffffff;
+  width: 250px;
+  padding: 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 1px 2px #28249d;
+}
+
+.onboarding-cont {
+  margin: auto;
+  margin-top: 30vh;
+}
+
+.form-content {
+  color: #000000;
+}
+
+/* Buttons */
+button {
+  background-color: #181a32;
+  color: #ffffff;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Inputs */
+input {
+  width: 230px;
+  height: 25px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  text-align: left;
+  font-size: 16px;
+}
+
+/* Result container */
+#result-container {
+  background-color: #ffffff;
+  width: 250px;
+  padding: 40px;
+  margin: auto;
+  margin-top: 30vh;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+#score-cont {
+  background-color: #181a32;
+  color: #ffffff;
+  width: 50px;
+  height: 50px;
+  padding: 24px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#score {
+  font-size: 28px;
+  font-weight: 600;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam Page</title>
+    <link rel="stylesheet" href="exam.css" />
+    <link rel="icon" href="gci_logo.png" />
+  </head>
+  <body>
+    <div class="exam_cont">
+      <h1>Choose a letter from A to D</h1>
+
+      <!-- Question -->
+      <section id="question">
+        <p id="question-number">Question 1</p>
+        <p id="question-text">Loading...</p>
+      </section>
+
+      <!-- Options -->
+      <section id="options" class="options"></section>
+
+      <!-- Navigation buttons -->
+      <section class="nav-buttons">
+        <button id="prevBtn" onclick="prevQ()">Previous</button>
+        <button id="nextBtn" onclick="nextQ()">Next</button>
+        <button id="finishBtn" onclick="finish()" style="display: none">
+          Finish
+        </button>
+      </section>
+    </div>
+
+    <script src="exam.js"></script>
+  </body>
+</html>
