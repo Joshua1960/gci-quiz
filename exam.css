@@ -13,7 +13,7 @@ body {
 
 /* ===== Exam Container ===== */
 .exam_cont {
-  max-width: 800px;
+  max-width: 1000px;
   width: 90%;
   margin: auto;
   display: flex;
