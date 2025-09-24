@@ -1,41 +1,68 @@
+/* ===== Global Styles ===== */
 body {
   background-color: #181a32;
   color: #ffffff;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Exam container */
+/* ===== Exam Container ===== */
 .exam_cont {
+  max-width: 800px;
+  width: 90%;
   margin: auto;
   display: flex;
   flex-direction: column;
-  place-items: center;
-  gap: 20px;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
 }
 
 .exam_cont h1 {
-  font-size: 40px;
-  display: flex;
-  margin-bottom: 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 0;
+  text-align: center;
 }
 
-/* Question and options */
+/* ===== Question and Options ===== */
 #question,
 .options {
   background-color: #282d49;
   border-radius: 10px;
-  padding: 20px 40px;
-  width: 80vw;
+  padding: 1.5rem 2rem;
+  width: 100%;
   letter-spacing: 1px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.75rem;
+  box-sizing: border-box;
 }
 
-/* Navigation buttons */
+#question p,
+.options label {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.5;
+}
+
+/* ===== Options Inputs ===== */
+.options input {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+/* ===== Navigation Buttons ===== */
 .nav-buttons {
   display: flex;
-  gap: 30px;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 #prevBtn,
@@ -43,14 +70,14 @@ body {
 #finishBtn {
   background-color: #ffffff;
   color: #181a32;
-  width: 200px;
-  height: 50px;
-  padding: 10px;
+  min-width: 140px;
+  padding: 0.75rem 1rem;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   text-align: center;
-  font-size: 16px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  transition: background-color 0.3s ease;
 }
 
 #nextBtn,
@@ -59,9 +86,42 @@ body {
   color: #ffffff;
 }
 
-/* Option inputs */
-.options input {
-  width: 20px;
-  height: 20px;
+#prevBtn:hover,
+#nextBtn:hover,
+#finishBtn:hover {
+  opacity: 0.85;
 }
 
+/* ===== Responsive Tweaks ===== */
+@media (max-width: 768px) {
+  .exam_cont {
+    padding: 1.5rem 1rem;
+  }
+
+  #question,
+  .options {
+    padding: 1rem 1.2rem;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  #prevBtn,
+  #nextBtn,
+  #finishBtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .exam_cont h1 {
+    font-size: 1.6rem;
+  }
+
+  #question p,
+  .options label {
+    font-size: 1rem;
+  }
+}
