@@ -3,7 +3,7 @@ const questions = [
   {
     q: "Which of the following quantities is a vector?",
     opts: ["Speed", "Distance", "Mass", "Velocity"],
-    ans: 3,
+    ans: 4,
   },
   {
     q: "A car accelerates from rest at a constant rate of 4 m/s². What is its speed after 5 seconds?",
