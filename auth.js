@@ -16,8 +16,11 @@ function welcomeToLogin() {
   window.location.href = "./login.html";
 }
 
+// function toExamPage() {
+//   window.location.href = "./exam.html";
+// }
 function toExamPage() {
-  window.location.href = "./exam.html";
+  window.location.href = "./subject.html"; // CHANGED
 }
 
 function toWelcomePage() {

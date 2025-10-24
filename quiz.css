@@ -30,7 +30,7 @@ body {
 
 .onboarding-cont {
   margin: auto;
-  margin-top: 30vh;
+  margin-top: 14vh;
 }
 
 .form-content {
@@ -91,4 +91,10 @@ input {
 #score {
   font-size: 28px;
   font-weight: 600;
+}
+
+.subject-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
