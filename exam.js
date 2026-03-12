@@ -2325,7 +2325,9 @@ function finish() {
   if (answers.every((a) => a === null)) {
     // Redirect to index.html if no attempts
     window.location.href = "index.html";
-        alert("You did not answer any question which is the reason you are being redirected to the homepage")
+    alert(
+      "You did not answer any question which is the reason you are being redirected to the homepage",
+    );
     return;
   }
 
@@ -2347,7 +2349,9 @@ window.onload = function () {
     localStorage.removeItem("subject");
     localStorage.removeItem("score");
     window.location.href = "index.html";
-    alert("You were informed not to refresh the page, you will be redirected to the home page ")
+    alert(
+      "You were informed not to refresh the page, you will be redirected to the home page ",
+    );
     return;
   }
 
@@ -2377,7 +2381,7 @@ window.onload = function () {
         // Third time - restart the exam
         // Store flag to show alert on welcome page
         localStorage.setItem("examRestarted", "true");
-        
+
         // Clear session and restart
         localStorage.removeItem("user");
         localStorage.removeItem("studentId");
