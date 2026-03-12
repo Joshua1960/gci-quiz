@@ -2,13 +2,14 @@ function login(event) {
   event.preventDefault(); // Prevent form refresh
 
   const username = document.getElementById("username")?.value.trim();
-  const password = document.getElementById("password")?.value.trim();
+  const studentId = document.getElementById("student-id")?.value.trim();
 
-  if (username && password) {
+  if (username && studentId) {
     localStorage.setItem("user", username);
+    localStorage.setItem("studentId", studentId);
     window.location.href = "./onboarding.html"; // Redirect
   } else {
-    alert("Please enter both username and password.");
+    alert("Please enter both username and student ID.");
   }
 }
 

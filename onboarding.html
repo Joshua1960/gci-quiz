@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,8 +10,23 @@
   <body>
     <section class="onboarding-cont form-cont">
       <h1>Welcome!</h1>
-      <p>You are about to start a quiz with 10 questions.</p>
-      <button onclick="toExamPage()">Start Quiz</button>
+      <p>
+        You are about to start an exam of 50 questions per subject. Try to
+        mantain your time.
+      </p>
+
+      <div class="int">
+        <p>───Exam Instructions ───</p>
+        <ul>
+          <li>Read each question carefully.</li>
+          <li>Do not refresh the page.</li>
+          <li>Each question carries equal marks.</li>
+          <li>Click Submit when finished.</li>
+          <li>Do not switch tabs when exam is going on.</li>
+        </ul>
+      </div>
+
+      <button onclick="toExamPage()" class="start-exam-btn">Start Exam</button>
     </section>
 
     <script src="auth.js"></script>

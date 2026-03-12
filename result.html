@@ -3,21 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz Result</title>
+    <title>Exam Result</title>
     <link rel="stylesheet" href="quiz.css" />
     <link rel="icon" href="gci_logo.png" />
   </head>
   <body>
-    <div id="result-container">
-      <h2 id="result-title">Quiz Completed</h2>
-      <div id="score-cont">
-        <p id="score"></p>
+    <section class="result-cont">
+        <div class="exam_cont">
+          <h1 id="Name"></h1>  
+        </div>
+      <div id="result-container">
+        <!-- User info displayed outside the result section -->
+        <div class="user-info">
+           <p id="student-name"></p>
+          <p id="student-id"></p>
+        </div>
+        <h2 id="result-title">You Scored</h2>
+        <div id="score-cont">
+          <p id="score"></p>
+        </div>
+          <p id="remark"></p>
+          <button onclick="toWelcomePage()" class="log-out-btn" >Log Out</button>
+        </div>
       </div>
-      <p id="remark"></p>
-      <button onclick="toWelcomePage()">End Quiz</button>
-    </div>
-
+    </section>
     <script src="exam.js"></script>
     <script src="auth.js"></script>
+    <script>
+      // Display username and student ID on result page
+      window.addEventListener('DOMContentLoaded', function() {
+        const username = localStorage.getItem("user");
+        const studentId = localStorage.getItem("studentId");
+        
+        if (document.getElementById("student-name")) {
+          document.getElementById("student-name").textContent = "Name: " + (username || "N/A");
+        }
+        if (document.getElementById("student-id")) {
+          document.getElementById("student-id").textContent = "Student ID: " + (studentId || "N/A");
+        }
+      });
+      
+      
+    </script>
   </body>
 </html>

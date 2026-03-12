@@ -22,12 +22,32 @@ body {
   gap: 1.5rem;
   padding: 2rem 1rem;
   box-sizing: border-box;
+  animation: fadeIn 0.8s ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 .exam_cont h1 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin: 0;
   text-align: center;
+}
+
+/* ===== Timer ===== */
+#timer {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d32f2f;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* ===== Question and Options ===== */
@@ -100,28 +120,235 @@ body {
 
   #question,
   .options {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .nav-buttons {
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  #prevBtn,
+  #nextBtn,
+  #finishBtn {
+    min-width: 120px;
+    flex: 1;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .exam_cont {
+    padding: 1.2rem 0.8rem;
+    gap: 1.2rem;
+  }
+
+  .exam_cont h1 {
+    font-size: 1.7rem;
+  }
+
+  #question,
+  .options {
     padding: 1rem 1.2rem;
+  }
+
+  #question p,
+  .options label {
+    font-size: 1rem;
   }
 
   .nav-buttons {
     flex-direction: column;
     gap: 0.8rem;
+    width: 100%;
   }
 
   #prevBtn,
   #nextBtn,
   #finishBtn {
     width: 100%;
+    max-width: none;
+    min-width: auto;
+  }
+
+  /* Calculator responsive */
+  .calculator {
+    width: 220px;
+    padding: 8px;
+  }
+
+  .calc-screen {
+    height: 32px;
+    font-size: 0.95rem;
+  }
+
+  .calc-keys button {
+    height: 32px;
+    font-size: 0.95rem;
+  }
+
+  .calc-toggle {
+    width: 38px;
+    height: 38px;
   }
 }
 
 @media (max-width: 480px) {
   .exam_cont h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
   }
 
   #question p,
   .options label {
+    font-size: 0.95rem;
+  }
+
+  #question,
+  .options {
+    padding: 1rem;
+  }
+
+  #timer {
+    font-size: 20px;
+  }
+
+  /* Calculator responsive */
+  .calculator {
+    width: 180px;
+    padding: 6px;
+  }
+
+  .calc-screen {
+    height: 28px;
+    font-size: 0.85rem;
+  }
+
+  .calc-keys button {
+    height: 28px;
+    font-size: 0.85rem;
+  }
+
+  .calc-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .logout-btn {
     font-size: 1rem;
+    padding: 5px 10px;
+  }
+}
+
+/* ===== Logout button ===== */
+.logout-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1100;
+  background: #053f71;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* ===== Calculator ===== */
+.calculator {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 260px;
+  background: #918585;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+}
+.calculator.hidden {
+  display: none;
+}
+.calc-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1100;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+}
+
+.calc-toggle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.calc-close {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.calc-screen {
+  width: 100%;
+  height: 35px;
+  text-align: right;
+  margin-bottom: 5px;
+  padding-right: 5px;
+  font-size: 1rem;
+}
+.calc-keys button {
+  width: 23%;
+  margin: 2px 1%;
+  height: 35px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.calc-keys .wide {
+  width: 98%;
+}
+
+/* ===== Small mobile ===== */
+@media (max-width: 360px) {
+  .exam_cont h1 {
+    font-size: 1.3rem;
+  }
+
+  #question p,
+  .options label {
+    font-size: 0.9rem;
+  }
+
+  #question,
+  .options {
+    padding: 0.8rem;
+  }
+
+  .calculator {
+    width: 160px;
+  }
+
+  .calc-keys button {
+    height: 26px;
+    font-size: 0.8rem;
   }
 }

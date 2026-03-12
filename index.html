@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,23 +11,35 @@
     <section class="welcome_cont">
       <p>Welcome to</p>
       <h3>
-        GCI Byte Busters <br />
-        Computer Based Test
+        GCI <br />
+        Computer Based Test <br />
+        Web App
       </h3>
       <img src="gci_logo.png" alt="GCI Logo" />
-      <button onclick="welcomeToLogin()">Get Started</button>
+      <button onclick="welcomeToLogin()" class="get-started-btn">Get Started</button>
     </section>
 
     <!-- DialogFlow -->
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <!-- <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <df-messenger
       intent="WELCOME"
       chat-title="Chatbot"
       agent-id="1cdb9982-3c79-4980-b41b-cf4898b0d4dd"
       language-code="en"
-    ></df-messenger>
+    ></df-messenger> -->
     <!-- Dialogflow -->
 
     <script src="auth.js"></script>
+    <script>
+      // Check if exam was restarted due to tab switching
+      window.addEventListener('DOMContentLoaded', function() {
+        if (localStorage.getItem("examRestarted") === "true") {
+          // Show alert on welcome page
+          alert("You switched tabs too many times! Your exam has been restarted.");
+          // Clear the flag
+          localStorage.removeItem("examRestarted");
+        }
+      });
+    </script>
   </body>
 </html>

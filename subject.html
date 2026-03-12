@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,20 +8,39 @@
     <link rel="icon" href="gci_logo.png" />
   </head>
   <body>
-    <section class="form-cont onboarding-cont">
-      <h1>Select Your Subject</h1>
-      <p>Choose a subject to begin your quiz.</p>
-
-      <div class="subject-buttons">
-        <button onclick="selectSubject('English')">English</button>
-        <button onclick="selectSubject('Mathematics')">Mathematics</button>
-        <button onclick="selectSubject('Biology')">Biology</button>
-        <button onclick="selectSubject('Computer Studies')">
-          Computer Studies
-        </button>
+    <section class="sub-cont">
+      <section class="form-cont-onboarding-cont">
+        <h1>Select Your Subject</h1>
+        <p>Choose a subject to begin your exam.</p>
+      </section>
+      <!-- <div class="subject-buttons"> -->
+      <div class="subject-cont">
+        <button
+          class="subject-btn-1 subject-btns"
+          onclick="selectSubject('English')"
+        ></button>
+        <button
+          class="subject-btn-2 subject-btns"
+          onclick="selectSubject('Mathematics')"
+        ></button>
+        <button
+          class="subject-btn-3 subject-btns"
+          onclick="selectSubject('Biology')"
+        ></button>
+        <button
+          class="subject-btn-4 subject-btns"
+          onclick="selectSubject('Physics')"
+        ></button>
+        <button
+          class="subject-btn-5 subject-btns"
+          onclick="selectSubject('Chemistry')"
+        ></button>
+        <button
+          class="subject-btn-6 subject-btns"
+          onclick="selectSubject('Computer Studies')"
+        ></button>
       </div>
     </section>
-
     <script src="auth.js"></script>
     <script>
       function selectSubject(subject) {

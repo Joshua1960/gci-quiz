@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,28 +8,56 @@
     <link rel="icon" href="gci_logo.png" />
   </head>
   <body>
-    <div class="exam_cont">
-      <h1>Choose a letter from A to D</h1>
+      <!-- Logout button always visible -->
+      <button id="logout-btn" class="logout-btn">Log out</button>
 
-      <!-- Question -->
-      <section id="question">
-        <p id="question-number">Question 1</p>
-        <p id="question-text">Loading...</p>
-      </section>
+      <!-- Calculator toggle and panel -->
+      <button id="calc-toggle" class="calc-toggle">
+        <img src="calculator-solid.png" alt="Calculator" />
+      </button>
+      <div id="calculator" class="calculator hidden">
+        <div class="calc-header">
+          <span>Calculator</span>
+          <button id="calc-close" class="calc-close">×</button>
+        </div>
+        <input type="text" id="calc-screen" class="calc-screen" readonly />
+        <div class="calc-keys">
+          <button>7</button><button>8</button><button>9</button
+          ><button>/</button> <button>4</button><button>5</button
+          ><button>6</button><button>*</button> <button>1</button
+          ><button>2</button><button>3</button><button>-</button>
+          <button>0</button><button>.</button><button>=</button
+          ><button>+</button>
+          <button class="wide">C</button>
+        </div>
+      </div>
 
-      <!-- Options -->
-      <section id="options" class="options"></section>
+      <div class="exam_cont">
+        <h1>Choose the correct answer <br />from the Question below.</h1>
 
-      <!-- Navigation buttons -->
-      <section class="nav-buttons">
-        <button id="prevBtn" onclick="prevQ()">Previous</button>
-        <button id="nextBtn" onclick="nextQ()">Next</button>
-        <button id="finishBtn" onclick="finish()" style="display: none">
-          Finish
-        </button>
-      </section>
-    </div>
+        <!-- Timer placeholder (moved from nav-buttons) -->
+        <div id="timer"></div>
 
+        <!-- Question -->
+        <section id="question">
+          <p id="question-number">Question 1</p>
+          <p id="question-text">Loading...</p>
+        </section>
+
+        <!-- Options -->
+        <section id="options" class="options"></section>
+
+        <!-- Timer will be injected dynamically at the top via JavaScript -->
+
+        <!-- Navigation buttons -->
+        <section class="nav-buttons">
+          <button id="prevBtn" onclick="prevQ()">Previous</button>
+          <button id="nextBtn" onclick="nextQ()">Next</button>
+          <button id="finishBtn" onclick="finish()" style="display: none">
+            Finish
+          </button>
+        </section>
+      </div>
     <script src="exam.js"></script>
   </body>
 </html>
